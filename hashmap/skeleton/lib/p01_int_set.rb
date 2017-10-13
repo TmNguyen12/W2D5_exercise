@@ -102,14 +102,6 @@ class ResizingIntSet < IntSet
     end
   end
 
-  # def remove(num)
-  # end
-  #
-  # def include?(num)
-  # end
-  def what_size
-    @size
-  end
   private
 
   # def [](num)

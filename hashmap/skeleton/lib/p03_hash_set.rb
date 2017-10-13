@@ -1,25 +1,28 @@
 require_relative 'p02_hashing'
+require_relative 'p01_int_set'
 
-class HashSet
-  attr_reader :count
+class HashSet < ResizingIntSet
+  # attr_reader :count
 
   def initialize(num_buckets = 8)
     @store = Array.new(num_buckets) { Array.new }
-    @count = 0
+    # @count = 0
+    @size = num_buckets
   end
-
-  def insert(key)
-  end
-
-  def include?(key)
-  end
-
-  def remove(key)
-  end
+  #
+  # def insert(key)
+  # end
+  #
+  # def include?(key)
+  # end
+  #
+  # def remove(key)
+  # end
 
   private
 
   def [](num)
+    @store[num.hash % num_buckets]
     # optional but useful; return the bucket corresponding to `num`
   end
 
@@ -27,6 +30,6 @@ class HashSet
     @store.length
   end
 
-  def resize!
-  end
+  # def resize!
+  # end
 end
