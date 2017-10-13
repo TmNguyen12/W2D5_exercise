@@ -1,5 +1,6 @@
 require 'rspec'
 require 'p05_hash_map'
+require 'byebug'
 
 describe HashMap do
   let(:hash) do
@@ -86,6 +87,7 @@ describe HashMap do
       hash.each do |k, v|
         result << [k, v]
       end
+      # debugger
       expect(result.sort).to eq(goal)
     end
 
